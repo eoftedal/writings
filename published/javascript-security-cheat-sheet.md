@@ -6,7 +6,7 @@ This is intended as a simple abbreviated cheat sheet for securing javascript bas
 What happens in JS, stays in JS
 -------------------------------
 
-Or to be more precise: What happens in the browser, stays in the browser. We cannot make security decisions for our data within the application. Any input validation (whether in html tags or implemented in JS) is purely cosmetic and for user guidance. Any security decisions based on data within the browser, needs to be double checked on the server. Anything happening in the browser can be altered. An attacker can access your services directly, thus circumventing any security implemented in the browser.
+Or to be more precise: What happens in the browser, stays in the browser. We cannot make security decisions for our data within the browser. Any input validation (whether in html tags or implemented in JS) in the browser is purely cosmetic and for user guidance. Any security decisions based on data within the browser, needs to be double checked on the server. Anything happening in the browser can be altered. An attacker can access your services directly, thus circumventing any security implemented in the browser.
 
 *Rule:* Access control, input validation and security decisions _must_ be made on the server.
 
