@@ -13,11 +13,13 @@ Or to be more precise: What happens in the browser, stays in the browser. We can
 Cover your XSS
 --------------
 
-Cross site scripting is a serious vulnerability. Even though XSS is often demonstrated using simple alert boxes, XSS is a common vector for delivering exploits. Consider using XSS to add an applet tag pointing to a malicious java application. Now we're getting serious.
+Cross site scripting is a serious vulnerability. Even though XSS is often demonstrated using simple alert boxes, XSS is a common vector for delivering exploits. Consider using XSS to add an applet tag pointing to a malicious java application. Game over (because I know you forgot to update to the latest Java).
 
-We need to [handle untrusted data](http://erlend.oftedal.no/blog/?blogid=127) whenever we are outputting data and whenever we are building code from strings (eval, new Function, setTimeout, setInterval). When outputting data, we need to [be aware of context](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet). Regarding building code from strings, just avoid it if you can.
+We need to escape untrusted data whenever we are outputting data in our templates. And wee need our escaping to [be aware](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet) [of context](https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet). 
 
-And untrusted data can come from [so many places](http://code.google.com/p/domxsswiki/wiki/Sources). Some examples are URIs, JSON services, window.referrer, window.name, input fields, cookies.
+Whenever we are building code from strings (eval, new Function, setTimeout, setInterval), we need to be really careful. Escaping quickly becomes _very_ difficult, so it's better to just avoid it. [JSHint](http://www.jshint.com/) says "eval is evil", and I agree.
+
+Untrusted data can come from [so many places](http://code.google.com/p/domxsswiki/wiki/Sources). Some examples are URIs, JSON services, window.referrer, window.name, input fields, cookies. And there are [lots of sinks](http://erlend.oftedal.no/blog/?blogid=127) that output raw HTML into the DOM, and can thus result in JS execution.
 
 *Rule: Handle untrusted data with care - use contextual encoding and avoid building code from strings.*
 
@@ -41,6 +43,7 @@ Resources
 * [OWASP Top 10 for JavaScript](http://erlend.oftedal.no/blog/?blogid=125)
 * [DOM XSS Wiki](http://code.google.com/p/domxsswiki/wiki/Sources)
 * [DOM Based XSS Prevention Cheat Sheet](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet)
+* [XSS (Cross Site Scripting) Prevention Cheat Sheet](https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet)
 * [Content Security Policy](https://developer.mozilla.org/en-US/docs/Security/CSP)
 * [Clickjacking](http://www.sectheory.com/clickjacking.htm)
 
