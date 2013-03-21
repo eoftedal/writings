@@ -50,5 +50,9 @@ Resources
 Suggestions?
 ------------
 
-Got ideas for improving this cheat sheet? Send me an [email](mailto:erlend@oftedal.no) or send me a pull request.
+Got ideas for improving this cheat sheet? Send me an [email](mailto:erlend@oftedal.no) or send me a pull request. Contributions will be attributed.
+
+Authors
+-------
+Erlend Oftedal - [@webtonull](https://twitter.com/webtonull) / [eoftedal](https://github.com/eoftedal)
 
