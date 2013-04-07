@@ -15,7 +15,7 @@ Cover your XSS
 
 Cross site scripting is a serious vulnerability. Even though XSS is often demonstrated using simple alert boxes, XSS is a common vector for delivering exploits. Consider using XSS to add an applet tag pointing to a malicious Java application. Game over (because I know you forgot to update to the latest Java).
 
-We need to escape untrusted data whenever we are outputting data in our templates. And wee need our escaping to [be aware](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet) [of context](https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet). 
+We need to escape untrusted data whenever we are outputting data in our templates. And we need our escaping to [be aware](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet) [of context](https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet). 
 
 Whenever we are building code from strings (`eval`, `new Function`, `setTimeout`, `setInterval`), we need to be really careful. Escaping quickly becomes _very_ difficult, so it's better to just avoid it. [JSHint](http://www.jshint.com/) says "eval is evil", and I agree.
 
