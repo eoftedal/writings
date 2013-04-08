@@ -47,8 +47,8 @@ Resources
 * [Content Security Policy](https://developer.mozilla.org/en-US/docs/Security/CSP)
 * [Clickjacking](http://www.sectheory.com/clickjacking.htm)
 
-Suggestions?
-------------
+Want to Contribute?
+-------------------
 
 Got ideas for improving this cheat sheet? Send me an [email](mailto:erlend@oftedal.no) or send me a pull request. Contributions will be attributed.
 
