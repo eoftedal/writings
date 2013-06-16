@@ -9,7 +9,7 @@ How can you help?
 -----------------
 Help me help you, or rather help me help your package's users. I have created a NuGet pacakge called [SafeNuGet](https://github.com/eoftedal/SafeNuGet). After installing this package into a project, SafeNuGet will check the status of the references libraries on every build, and warn the developers if anything is found to be vulnerable. However the status of the libraries need to be maintained. This is wher you come in. We help the users of our libraries by maintaining a [a list of vulnerable versions of our packages](https://github.com/eoftedal/SafeNuGet/blob/master/feed/unsafepackages.xml). And in the true spirit of Open Source, everything is free.
 
-So how do you submit your list of vulnerable versions? You can either [register an issue](https://github.com/eoftedal/SafeNuGet/issues), create a [https://github.com/eoftedal/SafeNuGet](pull request) or send me an email at [erlend@oftedal.no](mailto:erlend@oftedal.no). Please include the package id, the versions affected and a URL for more information.
+So how do you submit your list of vulnerable versions? You can either [register an issue](https://github.com/eoftedal/SafeNuGet/issues), create a [pull request](https://github.com/eoftedal/SafeNuGet) or send me an email at [erlend@oftedal.no](mailto:erlend@oftedal.no). Please include the package id, the versions affected and a URL for more information.
 
 Thank you for helping out.
 
