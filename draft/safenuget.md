@@ -1,7 +1,7 @@
 NuGet developer: Help me help you
 =================================
 
-Are you a developing NuGet packages? Good. Me too. And as all other developers, we all make mistakes from time to time. And the problem is, some of those mistakes become vulnerabilities. Now the problem is, how will the users of your library know?  
+Are you a developing NuGet packages? Good. Me too. We developers all make mistakes from time to time. And the problem is, some of those mistakes become vulnerabilities. Now the problem is, how will the users of your library know?  
 
 Using libraries with known vulnerabilities is a big problem. So big that it has in fact made it to the [OWASP Top 10 2013](https://www.owasp.org/index.php/Top_10#OWASP_Top_10_for_2013). It's under *A9 Using Known Vulnerable Components*.
 
