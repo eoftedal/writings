@@ -13,9 +13,11 @@ So how do you submit your list of vulnerable versions? You can either [register 
 
 Thank you for helping out.
 
+Code contributions
+-------------------
+If you want to help improve SafeNuGet itself as well, you are more than welcome to. Pull requests are more than welcome, and so are suggested enhancements through github's issue tracker.
 
-Resources
----------
-
-* [OWASP Top 10 2013](https://www.owasp.org/index.php/Top_10#OWASP_Top_10_for_2013)
+Like the idea?
+--------------
+Help me spread the word, by telling your fellow NuGetters.
 
