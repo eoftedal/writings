@@ -170,7 +170,7 @@ Another thing to consider any security vulnerabilities in downloaded libraries. 
 
 # Resources
 
-* [OWASP XSS Prevention Cheat Sheet](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
+* [OWASP XSS Prevention Cheat Sheet](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting\)_Prevention_Cheat_Sheet)
 * [OWASP Abridged XSS Prevention Cheat Sheet](https://www.owasp.org/index.php/Abridged_XSS_Prevention_Cheat_Sheet)
 * [OWASP DOM-Based XSS Prevention Cheat Sheet](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet)
 * [An overview of DOM XSS](http://sec.omar.li/2012/05/overview-of-dom-xss.html)
