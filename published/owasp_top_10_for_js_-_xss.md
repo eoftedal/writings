@@ -4,7 +4,7 @@ This is the risk rating from OWASP:
 ![OWASP Risk rating XSS](http://beta.open.bekk.no/Home/Attachment/6e1ebb35-35b3-4137-8f9b-8ff986d3090c)
 
 # Traditional XSS
-We traditionally talk about two types of XSS - reflected and stored. In reflected XSS, the attack is a part of the URL like this one: http://www.insecurelabs.org/Search.aspx?query="><script>alert(1)</script>` You can test that one [here](http://www.insecurelabs.org/Search.aspx?query=%22%3E%3Cscript%3Ealert%281%29%3C/script%3E). In reflected XSS, the attacker has to trick the user into opening the URL somehow - typically by employing iframes, phishing or shortened URLs.
+We traditionally talk about two types of XSS - reflected and stored. In reflected XSS, the attack is a part of the URL like this one: `http://www.insecurelabs.org/Search.aspx?query="><script>alert(1)</script>` You can test that one [here](http://www.insecurelabs.org/Search.aspx?query=%22%3E%3Cscript%3Ealert%281%29%3C/script%3E). In reflected XSS, the attacker has to trick the user into opening the URL somehow - typically by employing iframes, phishing or shortened URLs.
 
 In stored, or persistent, XSS, the attacker is able to store the attack string in the database. Since the attack is not dependent on the exact URL being visited anymore, the attacker can simply wait for a victim to visit the otherwise legit page. An example could be the commenting section here: [http://www.insecurelabs.org/Talk/Details/5].
 
