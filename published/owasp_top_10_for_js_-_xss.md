@@ -4,7 +4,7 @@ This is the risk rating from OWASP:
 ![OWASP Risk rating XSS](http://beta.open.bekk.no/Home/Attachment/6e1ebb35-35b3-4137-8f9b-8ff986d3090c)
 
 # Traditional XSS
-We traditionally talk about two types of XSS - reflected and stored. In reflected XSS, the attack is a part of the URL like this one: http://www.insecurelabs.org/Search.aspx?query="><script>alert(1)</script>` You can test that one [here](http://www.insecurelabs.org/Search.aspx?query="><script>alert(1)</script>). In reflected XSS, the attacker has to trick the user into opening the URL somehow - typically by employing iframes, phishing or shortened URLs.
+We traditionally talk about two types of XSS - reflected and stored. In reflected XSS, the attack is a part of the URL like this one: http://www.insecurelabs.org/Search.aspx?query="><script>alert(1)</script>` You can test that one [here](http://www.insecurelabs.org/Search.aspx?query=%22%3E%3Cscript%3Ealert%281%29%3C/script%3E). In reflected XSS, the attacker has to trick the user into opening the URL somehow - typically by employing iframes, phishing or shortened URLs.
 
 In stored, or persistent, XSS, the attacker is able to store the attack string in the database. Since the attack is not dependent on the exact URL being visited anymore, the attacker can simply wait for a victim to visit the otherwise legit page. An example could be the commenting section here: [http://www.insecurelabs.org/Talk/Details/5].
 
@@ -56,7 +56,7 @@ This can be exploited with:
 
 	http://example.com/some/page#<img src=insecure onerror=alert(1)>
 
-The next one is a bit more subtle (courtesy of An overview of DOM XSS):
+The next one is a bit more subtle (courtesy of [An overview of DOM XSS](http://sec.omar.li/2012/05/overview-of-dom-xss.html)):
 
 	hash = location.hash.substring(1);
 	if (!$('a[name|="' + hash + '"]')[0]) {
@@ -69,7 +69,7 @@ While the examples above jQuery specific, it is very likely that there are simil
 
 ## Insecure use of document.location
 
-Allowing user input to be directly assigned to document.location`, can easily lead to XSS in the form of `javascript:` URLs. The following example is from twitter back in september 2010 (I _highly_ recommend you read the full blog post here: [Minded Security Blog: A Twitter DomXss, a wrong fix and something more]()): 
+Allowing user input to be directly assigned to document.location`, can easily lead to XSS in the form of `javascript:` URLs. The following example is from twitter back in september 2010 (I _highly_ recommend you read the full blog post here: [Minded Security Blog: A Twitter DomXss, a wrong fix and something more](http://blog.mindedsecurity.com/2010/09/twitter-domxss-wrong-fix-and-something.html)): 
 
 	(function(g){var a=location.href.split("#!")[1];if(a){g.location=g.HBR=a;}})(window);
 
@@ -90,7 +90,7 @@ Templating from frameworks like Mustache.js and underscore.js etc. allow javascr
 
 The HTML escaping escapes `&`, `<`, `>`, `"`, `'` and `/`. I don't intend to pick on underscore.js. This is one of the better escaping functions I've seen. But we need to remember to use the HTML escaping tag. And there are contexts where this will not work, simply because HTML escaping is not the correct escaping.
 
-*Quoteless HTML attributes*
+**Quoteless HTML attributes**
 
 Template code:
 
@@ -100,7 +100,7 @@ Attack:
 
 	<img title=something onclick=alert(1) ...>
 
-*HTML comments* - courtesy of http://html5sec.org/#133
+**HTML comments** - courtesy of http://html5sec.org/#133
 
 Template code:
 
@@ -110,7 +110,7 @@ Attack:
 
 	<!-- ` I'm now outside the comment in IE6-8 -->
 
-*Inside script tags*, but you are not using those in a javascript app, right?
+**Inside script tags**, but you are not using those in a javascript app, right?
 
 Template code:
 
@@ -124,7 +124,7 @@ Attack:
 	var id = 1;alert(/XSS/.source);
 	</script>
 
-*Inside javascript event handlers*, but you are not using those in a javascript app, right?
+**Inside javascript event handlers**, but you are not using those in a javascript app, right?
 
 Template code:
 
@@ -134,7 +134,7 @@ Attack:
 
 	<img onmouseover="showToolTip('&#039;);alert(&#039;XSS')" ...>
 
-*Insecure use of URLs*
+**Insecure use of URLs**
 
 Template code:
 
@@ -156,17 +156,17 @@ Now if example.com goes rougue or is hacked, example.js could start delivering m
 Another thing to consider any security vulnerabilities in downloaded libraries. When you are pulling in some third party script, you should also make sure you later stay up to date, and follow any announcements from the developers of that library.
 
 # Mitigation
-* *Default to secure methods* - use `$.text()` instead of `$.html()`
-* *Default to escaping output* - use `<%- %>` instead of `<%= %>`
-* *Check your templating framework's escaping code* - is it as thorough as underscore.js or does it escape fewer characters?
-* *Prefer frameworks with secure defaults*
-* *Set the correct Content-Types and use proper JSON escaping*
-* *Beware of XSS contexts* - make sure you are not using the wrong/insufficient escaping for the contexts
-* *Avoid sticking user data in insecure functions like `eval`*
-* *Beware when using user data with APIs like jQuery* - test it
-* *Use automated tests with XSS attacks* - test your code and templates using automated javascript tests and bad data
-* *Read and learn the OWASP XSS cheat sheets by heart*
-* *Use [jQuery encoder](https://github.com/chrisisbeef/jquery-encoder) for complex contexts*
+* **Default to secure methods** - use `$.text()` instead of `$.html()`
+* **Default to escaping output** - use `<%- %>` instead of `<%= %>`
+* **Check your templating framework's escaping code** - is it as thorough as underscore.js or does it escape fewer characters?
+* **Prefer frameworks with secure defaults**
+* **Set the correct Content-Types and use proper JSON escaping**
+* **Beware of XSS contexts** - make sure you are not using the wrong/insufficient escaping for the contexts
+* **Avoid sticking user data in insecure functions like `eval`**
+* **Beware when using user data with APIs like jQuery** - test it
+* **Use automated tests with XSS attacks** - test your code and templates using automated javascript tests and bad data
+* **Read and learn the OWASP XSS cheat sheets by heart**
+* **Use [jQuery encoder](https://github.com/chrisisbeef/jquery-encoder) for complex contexts**
 
 # Resources
 
