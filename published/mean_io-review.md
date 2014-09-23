@@ -1,7 +1,7 @@
 Mean IO security review
 =======================
 
-I've been meaning to review Mean IO for some time and finally found the time to take a look at it. 
+I've been meaning to review Mean IO for some time and finally found the time to take a quick look at it
 
 Password handling
 -----------------
