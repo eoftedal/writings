@@ -1,7 +1,7 @@
 Cross site Scripting - or XSS - is probably one of the most common and one of the most difficult problems to fully mitigate. At first it seems simple, but as contexts grow in complexity and the amount of code grows, it get's harder to discover all the different sinks.
 
 This is the risk rating from OWASP: 
-![OWASP Risk rating XSS](http://beta.open.bekk.no/Home/Attachment/6e1ebb35-35b3-4137-8f9b-8ff986d3090c)
+![OWASP Risk rating XSS](https://raw.githubusercontent.com/eoftedal/writings/master/published/images/owasp-xss.png)
 
 # Traditional XSS
 We traditionally talk about two types of XSS - reflected and stored. In reflected XSS, the attack is a part of the URL like this one: `http://www.insecurelabs.org/Search.aspx?query="><script>alert(1)</script>` You can test that one [here](http://www.insecurelabs.org/Search.aspx?query=%22%3E%3Cscript%3Ealert%281%29%3C/script%3E). In reflected XSS, the attacker has to trick the user into opening the URL somehow - typically by employing iframes, phishing or shortened URLs.
