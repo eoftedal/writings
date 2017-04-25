@@ -55,4 +55,8 @@ CORS has a much better security model, and allows restriction based on origins. 
 
 * Is private data delivered over jsonp? Does removing cookies make a difference?
 * Which characters etc. are allowed as `callback` ? Only letters and numbers? Full set of javascript characters? All ascii values? Unicode? Max length?
+* Some frameworks allow JSONP by default. Try adding ?callback or ?cb or
+
+## More info
+[https://en.wikipedia.org/wiki/JSONP](https://en.wikipedia.org/wiki/JSONP)
 
