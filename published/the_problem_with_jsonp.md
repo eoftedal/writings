@@ -51,4 +51,8 @@ There could even be the possibility to inject other content such as images, flas
 ## There is a reason why we have CORS
 CORS has a much better security model, and allows restriction based on origins. Use that instead.
 
+## I'm a security tester - what should I look for?
+
+* Is private data delivered over jsonp? Does removing cookies make a difference?
+* Which characters etc. are allowed as `callback` ? Only letters and numbers? Full set of javascript characters? All ascii values? Unicode? Max length?
 
